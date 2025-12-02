@@ -6,6 +6,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 const RENDER_API_KEY = process.env.RENDER_API_KEY;
 
+app.get('/', (req, res) => {
+  res.send('Server is running!');
+});
+
 app.get('/apps', async (req, res) => {
   try {
     const response = await axios.get('https://api.render.com/v1/services', {
