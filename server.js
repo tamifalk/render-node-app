@@ -53,6 +53,9 @@ app.get('/apps', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+app.get('/', (req, res) => {
+  res.redirect('/apps');
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
